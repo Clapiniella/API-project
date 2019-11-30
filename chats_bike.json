@@ -1,0 +1,18 @@
+[
+    {
+        "idUser": 0,
+        "userName": "John Wick",
+        "idMessage": 55,
+        "idChat": 5,
+        "datetime": "2019-12-17 10:15:41",
+        "text": "Mike, I need you, have some troubles with your bike"
+    },
+    {
+        "idUser": 1,
+        "userName": "Mike Wazowski",
+        "idMessage": 56,
+        "idChat": 5,
+        "datetime": "2019-12-17 10:16:59",
+        "text": "Oh no! What happened?"
+    }
+]

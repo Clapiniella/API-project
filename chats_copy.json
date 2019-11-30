@@ -1,9 +1,8 @@
-[
-    {
+[    {
         "idUser": 8,
         "userName": "Tony Pons",
         "idMessage": 50,
-        "idChat": 5,
+        "idChat": 6,
         "datetime": "2019-11-30 10:15:41",
         "text": "Hey Dude, how is it going?"
     },
@@ -11,7 +10,7 @@
         "idUser": 9,
         "userName": "Guzman El Bueno",
         "idMessage": 51,
-        "idChat": 5,
+        "idChat": 6,
         "datetime": "2019-11-30 10:16:59",
         "text": "Long time no see! 😀️ I've been good, chilling... what about you?"
     },
@@ -19,7 +18,7 @@
         "idUser": 8,
         "userName": "Tony Pons",
         "idMessage": 52,
-        "idChat": 5,
+        "idChat": 6,
         "datetime": "2019-11-30 10:17:31",
         "text": "I've been through a shitty time, but getting better, you know"
     },
@@ -27,7 +26,7 @@
         "idUser": 9,
         "userName": "Guzman El Bueno",
         "idMessage": 53,
-        "idChat": 5,
+        "idChat": 6,
         "datetime": "2019-11-30 10:18:41",
         "text": "That sounds shitty"
     },
@@ -35,7 +34,7 @@
         "idUser": 9,
         "userName": "Guzman El Bueno",
         "idMessage": 54,
-        "idChat": 5,
+        "idChat": 6,
         "datetime": "2019-11-30 10:19:41",
         "text": "Let's meet to play some chess, and you'll see you start feeling better"
     }
