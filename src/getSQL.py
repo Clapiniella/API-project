@@ -19,11 +19,10 @@ def querita(number):
     jdaughter = df.to_json(orient='records')
     return json.loads(jdaughter)
     
-
 querita(8)
 
-'''
 
+'''
 password = getpass.getpass("Insert your mysql root password: ")
 engine = db.create_engine('mysql+pymysql://root:{}@localhost/api-project'.format(password))
 connection = engine.connect()
@@ -35,6 +34,16 @@ ResultProxy = connection.execute(query)
 
 ResultSet = ResultProxy.fetchall()
 
-print(json.dumps(ResultSet[:3],indent=4))
+print(ResultSet[:3],indent=4)
+
+
+@post('/user/create')
+def createUser():
+    name = str(request.forms.get('name'))
+    query=INSERT INTO project_api.users (userName) VALUES ({});
+            SELECT idUser FROM project_api.users
+            WHERE users.userName = {};
+            .format(name,name)
+    return query
 
 '''
