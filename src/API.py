@@ -25,6 +25,8 @@ def querita(number):
     jdaughter = df.to_json(orient='records')
     return json.dumps(jdaughter)
 
+
+
 @get('/mensajes/<number>')
 def querito(number):
     query = """
@@ -47,6 +49,17 @@ def queryMessages(chat_id):
     df = pd.read_sql_query(query, engine)
     jdaughter = df.to_json(orient='records')
     return json.dumps(jdaughter)
+
+@get('/chat/<chat_id>/sentiment')
+def querySenti(chat_id):
+    mess= queryMessages(chat_id)
+    messages= json.loads(mess)
+    lenof= len(messages)
+    return { 
+        'lenof': lenof 
+        }
+        
+#https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-fetchall.html
 
 @get('/user/create')
 def insertName():
