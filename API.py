@@ -6,13 +6,7 @@ import requests
 import mysql.connector
 import getSQL as sql
 import sentiment as sen
-
-'''
-password = getpass.getpass("Insert your mysql root password: ")
-engine = db.create_engine('mysql+pymysql://root:{}@localhost/project_api'.format(password))
-connection = engine.raw_connection()
-cursor = connection.cursor()
-'''
+import recommender as rec 
    
 @route('/hello/<name>')
 def index(name):
@@ -86,6 +80,19 @@ def createMessage():
     userid = request.forms.get('userid')
     newMes= sql.newMessage(text, chatid, userid)
     return json.dumps(newMes)
+
+@get('/findafriend')
+def insertFriend():
+    return '''<form method="POST" action="/findafriend">
+            Insert a new name: <input name="name"     type="text" />
+            <input type="submit" />
+              </form>'''
+
+@get('/findafriend')
+def findFriend():
+    name = str(request.forms.get('name'))
+    res = rec.recommendator(name)
+    return json.dumps (res)
   
 
 

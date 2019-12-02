@@ -1,0 +1,11 @@
+bottle==0.12.17
+nltk==3.4.5
+numpy==1.17.3
+pandas==0.25.2
+python-dotenv==0.10.3
+requests==2.21.0
+SQLAlchemy
+jsonschema==3.1.1
+simplejson==3.16.0
+mysql-connector==2.2.9
+
