@@ -13,15 +13,19 @@ engine = db.create_engine(url)
 connection = engine.raw_connection()
 cursor = connection.cursor()
 
+def getUsers():
+    query = """
+    SELECT * FROM users;
+    """
+    cursor.execute(query)
+    return cursor.fetchall()
 
 def getChatIdUser(number):
     query = """
-        SELECT * FROM messages WHERE users_idUser={}
+        SELECT text FROM messages WHERE users_idUser={}
     """.format(number)
-    print("Running query")
-    print(query)
-    df= pd.read_sql_query(query, engine)
-    return df.to_json(orient='records')
+    cursor.execute(query)
+    return cursor.fetchall()
 
 def whoIdUser(number):
     query = """
@@ -35,10 +39,17 @@ def whoIdUser(number):
     df= pd.read_sql_query(query, engine)
     return df.to_json(orient='records')
 
-def getMessages(chat_id):
+def getMessagesChat(chat_id):
     query = """
         SELECT text FROM messages WHERE chats_idChat='{}'
     """.format(chat_id)
+    cursor.execute(query)
+    return cursor.fetchall()
+
+def getMessagesUser(user_id):
+    query = """
+        SELECT text FROM messages WHERE users_idUser='{}'
+    """.format(user_id)
     cursor.execute(query)
     return cursor.fetchall()
 
@@ -52,8 +63,7 @@ def newUser(name):
     """.format(name)
     cursor.execute(query2)
     return cursor.fetchall()
-
-    
+  
 
 def newChat():
     with engine.connect() as conn:

@@ -1,5 +1,23 @@
 '''
-
+def userRecommend(user_id):
+    data = selectTables("users")
+    print(data)
+    docs = dict()
+    for u in data:
+        print(u[0])
+        messages = userMessages(u[0])
+        mestring = ' '.join([data for ele in messages for data in ele])
+        docs.update({u[1]:mestring})
+    count_vectorizer = CountVectorizer()
+    sparse_matrix = count_vectorizer.fit_transform(docs.values())
+    doc_term_matrix = sparse_matrix.todense()
+    df = pd.DataFrame(doc_term_matrix, columns=count_vectorizer.get_feature_names(), index=docs.keys())
+    similarity_matrix = distance(df, df)
+    sim_df = pd.DataFrame(similarity_matrix, columns=docs.keys(), index=docs.keys())
+    np.fill_diagonal(sim_df.values, 0) # Remove diagonal max values and set those to 0
+    res = {'recommended_users': [e for e in list(sim_df[name].sort_values(ascending=False)[0:3].index)]}
+    return res
+    
 def querita(number):
     query = """
         SELECT * FROM messages WHERE idUser={}

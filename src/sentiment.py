@@ -10,5 +10,9 @@ def getSent(chats):
     return sid.polarity_scores(analiza)
 
 def chatSentiment(chat_id):
-    chat=sql.getMessages(chat_id)
+    chat=sql.getMessagesChat(chat_id)
     return getSent(chat)
+
+def userSentiment(user_id):
+    user=sql.getMessagesUser(user_id)
+    return getSent(user)

@@ -1,6 +1,5 @@
 from bottle import route, run, template, get, post, request
 import sqlalchemy as db
-import getpass
 import json
 import pandas as pd
 import requests
@@ -19,6 +18,10 @@ cursor = connection.cursor()
 def index(name):
     return template('<b>Hello {{name}}</b>!', name=name)
 
+@get('/idUser/user')
+def showUser():
+    usuarios = sql.getUsers()
+    return json.dumps(usuarios)
 
 @get('/idUser/<number>')
 def querita(number):
@@ -33,14 +36,19 @@ def querito(number):
 
 @get('/chat/<chat_id>/list')
 def queryMessages(chat_id):
-    re_rows=sql.getMessages(chat_id)
+    re_rows=sql.getMessagesChat(chat_id)
     return json.dumps(re_rows)
 
 
 @get('/chat/<chat_id>/sentiment')
-def querySenti(chat_id):
+def querySentiC(chat_id):
     sentimi = sen.chatSentiment(chat_id)
     return json.dumps(sentimi)
+
+@get('/user/<user_id>/sentiment')
+def querySentiU(user_id):
+    sent = sen.userSentiment(user_id)
+    return json.dumps(sent)
 
 @get('/user/create')
 def insertName():
