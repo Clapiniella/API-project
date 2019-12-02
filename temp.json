@@ -1,2 +1,15 @@
-{"idMessage":50,"text":"Hey Dude, how is it going?","datetime":1575108941000,"idChat":6,"idUser":8}
-{"idMessage":52,"text":"I've been through a shitty time, but getting better, you know","datetime":1575109051000,"idChat":6,"idUser":8}
+[
+    {
+    "idMessage": 57,
+    "text": "Hey, how are you?",
+    "datetime": "2019-12-24 11:19:41",
+    "idChat": 2,
+    "idUser": 4
+},
+{
+    "idMessage": 58,
+    "text": "Hello? are you alive?",
+    "datetime": "2019-12-24 11:30:30",
+    "idChat": 2,
+    "idUser": 4
+}]

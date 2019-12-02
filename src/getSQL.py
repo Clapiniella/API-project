@@ -2,14 +2,17 @@ import sqlalchemy as db
 import getpass
 import json
 import pandas as pd
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 #https://towardsdatascience.com/sqlalchemy-python-tutorial-79a577141a91
 
-
-password = getpass.getpass("Insert your mysql root password: ")
-engine = db.create_engine('mysql+pymysql://root:{}@localhost/project_api'.format(password))
+url= os.getenv('PASSWORD')
+engine = db.create_engine(url)
 connection = engine.raw_connection()
 cursor = connection.cursor()
+
 
 def getChatIdUser(number):
     query = """
@@ -32,7 +35,6 @@ def whoIdUser(number):
     df= pd.read_sql_query(query, engine)
     return df.to_json(orient='records')
 
-
 def getMessages(chat_id):
     query = """
         SELECT text FROM messages WHERE chats_idChat='{}'
@@ -50,7 +52,9 @@ def newUser(name):
     """.format(name)
     cursor.execute(query2)
     return cursor.fetchall()
+
     
+
 def newChat():
     with engine.connect() as conn:
         a=list(conn.execute("SELECT idChat FROM chats ORDER BY idChat DESC LIMIT 1"))
@@ -75,4 +79,3 @@ def newMessage(text,userid,chatid):
     """.format(text)
     cursor.execute(query2)
     return cursor.fetchall()
-
