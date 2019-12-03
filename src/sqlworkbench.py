@@ -53,6 +53,6 @@ def populatetable(jdaughter):
           
         return print('Done!')
 
-populatetable('../chats_copy.json')
+populatetable('./INPUT/chats_bike.json')
 
 

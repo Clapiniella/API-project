@@ -80,17 +80,10 @@ def createMessage():
     userid = request.forms.get('userid')
     newMes= sql.newMessage(text, chatid, userid)
     return json.dumps(newMes)
+    
 
-@get('/findafriend')
-def insertFriend():
-    return '''<form method="POST" action="/findafriend">
-            Insert a new name: <input name="name"     type="text" />
-            <input type="submit" />
-              </form>'''
-
-@get('/findafriend')
-def findFriend():
-    name = str(request.forms.get('name'))
+@get('/findafriend/<name>')
+def findFriend(name):
     res = rec.recommendator(name)
     return json.dumps (res)
   
