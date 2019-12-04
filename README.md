@@ -1,10 +1,10 @@
-# API-project
+# API project
 
 The goal of this project is to analyze the conversations of my team to ensure they are happy 😃
 
 **Main goal**: Analyze the conversations coming from a chat like `slack`
 
-# How ?
+## How ?
 
 - (L1🧐) Writing an API in bottle just to store chat messages in mysql
 
@@ -19,7 +19,7 @@ file:///home/clara/Desktop/Ironhack/Projects/instrucciones-API/remote_dbs/Screen
 
 - (L3😎) Creating an image of the API with docker
 
-# API endpoints
+## API endpoints
 
   #### @route('/hello/<name>')
     
