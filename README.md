@@ -6,18 +6,13 @@ The goal of this project is to analyze the conversations of my team to ensure th
 
 ## How ?
 
-- (L1🧐) Writing an API in bottle just to store chat messages in mysql
+- (L1🧐) Writing an API in bottle just to store chat messages in `mySQL`
 
-x-special/nautilus-clipboard
-copy
-file:///home/clara/Desktop/Ironhack/Projects/instrucciones-API/remote_dbs/Screenshot%20from%202019-11-29%2009-22-44.png
+- (L2🥳) Extracting sentiment from chat messages and perform a report over a whole conversation 
 
+- (L4🤭) Recommending friends to a user based on the contents from chat documents using a recommender system with `NLP` analysis
 
-- (L2🥳) Extracting sentiment from chat messages and perform a report over a whole conversation
-
-- (L4🤭) Recommending friends to a user based on the contents from chat `documents` using a recommender system with `NLP` analysis
-
-- (L3😎) Creating an image of the API with docker
+- (L3😎) Creating an image of the API with `Docker`
 
 ## API endpoints
 
