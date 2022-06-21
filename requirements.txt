@@ -1,6 +1,6 @@
 bottle==0.12.17
 nltk==3.4.5
-numpy==1.17.3
+numpy==1.22.0
 pandas==0.25.2
 python-dotenv==0.10.3
 requests==2.21.0
